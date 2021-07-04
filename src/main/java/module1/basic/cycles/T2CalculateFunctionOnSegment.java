@@ -1,4 +1,4 @@
-package S1_Basic_of_software_code_development.L3_Cycles;
+package module1.basic.cycles;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -9,9 +9,10 @@ import java.io.InputStreamReader;
 y = {x, если x>2; -x, если x<=2
  */
 
-public class T2_Calculate_function_on_segment {
+public class T2CalculateFunctionOnSegment {
     public static void main(String[] args) throws IOException {
         double a, b, h;
+
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         try {
             System.out.print("Введите начало отрезка a: ");
@@ -31,8 +32,9 @@ public class T2_Calculate_function_on_segment {
         } catch (NumberFormatException e) {
             System.out.println("Введены неверные данные");
             return;
+        } finally {
+            reader.close();
         }
-        reader.close();
 
         System.out.println("Значения функции на заданном отрезке с заданным шагом:");
         for (double i = a; i <= b; i += h) {

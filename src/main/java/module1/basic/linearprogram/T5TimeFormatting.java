@@ -1,4 +1,4 @@
-package S1_Basic_of_software_code_development.L1_Linear_programs;
+package module1.basic.linearprogram;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -9,9 +9,10 @@ import java.io.InputStreamReader;
 ННч ММмин SSc.
  */
 
-public class T5_Time_formatting {
+public class T5TimeFormatting {
     public static void main(String[] args) throws IOException {
         int timeInSeconds;
+
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         try {
             System.out.print("Введите значение времени в секундах: ");
@@ -23,8 +24,9 @@ public class T5_Time_formatting {
         } catch (NumberFormatException e) {
             System.out.println("Введены неверные данные");
             return;
+        } finally {
+            reader.close();
         }
-        reader.close();
 
         System.out.println("Введенное значение составляет: "+getReadableTime(timeInSeconds));
     }

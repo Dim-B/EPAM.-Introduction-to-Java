@@ -1,4 +1,4 @@
-package S1_Basic_of_software_code_development.L1_Linear_programs;
+package module1.basic.linearprogram;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -10,9 +10,11 @@ import java.io.InputStreamReader;
 ((sin(x)+cos(y))/(cos(x)-sin(y)))*tg(x)*y
  */
 
-public class T3_expression_value_2 {
+public class T3ExpressionValue2 {
     public static void main(String[] args) throws IOException {
-        double x, y;
+        double x;
+        double y;
+
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         try {
             System.out.print("Введите x: ");
@@ -22,15 +24,16 @@ public class T3_expression_value_2 {
         } catch (NumberFormatException e) {
             System.out.println("Введены неверные данные");
             return;
+        } finally {
+            reader.close();
         }
-        reader.close();
 
         System.out.println("Значение выражения  равно: " + calculateEXP(x, y));
 
     }
 
     private static double calculateEXP(double x, double y) {
-        return ((Math.sin(Math.toRadians(x)) + Math.cos(Math.toRadians(y))) / (Math.cos(Math.toRadians(x)) - Math.sin(Math.toRadians(y))))*Math.tan(Math.toRadians(x))*y;
+        return ((Math.sin(Math.toRadians(x)) + Math.cos(Math.toRadians(y))) / (Math.cos(Math.toRadians(x)) - Math.sin(Math.toRadians(y)))) * Math.tan(Math.toRadians(x)) * y;
     }
 
 }

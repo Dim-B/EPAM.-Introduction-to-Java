@@ -1,4 +1,4 @@
-package S1_Basic_of_software_code_development.L3_Cycles;
+package module1.basic.cycles;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -8,26 +8,26 @@ import java.io.InputStreamReader;
 6. Вывести на экран соответствий между символами и их численными обозначениями в памяти компьютера.
  */
 
-public class T6_Symbol_code_table {
+public class T6SymbolCodeTable {
     public static void main(String[] args) throws IOException {
-
 
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         try {
             System.out.println("Таблица соответствий основных символов: ");
-            for (String s :getSymbolTable(33, 126)){
+            for (String s : getSymbolTable(33, 126)) {
                 System.out.println(s);
             }
             String symbols;
             System.out.print("Вы можете ввести любой другой символ(или несколько): ");
             symbols = reader.readLine();
-            for (String s :getSymbolTable(symbols)){
+            for (String s : getSymbolTable(symbols)) {
                 System.out.println(s);
             }
         } catch (IOException exception) {
             exception.printStackTrace();
+        } finally {
+            reader.close();
         }
-        reader.close();
 
     }
 
@@ -41,7 +41,7 @@ public class T6_Symbol_code_table {
     }
 
     private static String[] getSymbolTable(int startPos, int endPos) {
-        String[] table = new String[endPos - startPos+1];
+        String[] table = new String[endPos - startPos + 1];
         for (int i = 0; i <= endPos - startPos; i++) {
             table[i] = (char) (i + startPos) + " - " + (i + startPos);
         }

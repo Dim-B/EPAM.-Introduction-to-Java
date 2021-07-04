@@ -1,4 +1,4 @@
-package S1_Basic_of_software_code_development.L1_Linear_programs;
+package module1.basic.linearprogram;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -9,9 +9,12 @@ import java.io.InputStreamReader;
 ((b+sqr(b^2+4*a*c))/2*a)-a^3*c+b^(-2)
  */
 
-public class T2_expression_value_1 {
+public class T2ExpressionValue1 {
     public static void main(String[] args) throws IOException {
-        double a, b, c;
+        double a;
+        double b;
+        double c;
+
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         try {
             System.out.print("Введите значение a: ");
@@ -23,8 +26,9 @@ public class T2_expression_value_1 {
         } catch (NumberFormatException e) {
             System.out.println("Введены неверные данные");
             return;
+        } finally {
+            reader.close();
         }
-        reader.close();
 
         System.out.println("Значение выражения ((b+sqr(b^2+4*a*c))/2*a)-a^3*c+b^(-2) равно: " + calculateEXP(a, b, c));
 

@@ -1,4 +1,4 @@
-package S1_Basic_of_software_code_development.L1_Linear_programs;
+package module1.basic.linearprogram;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -20,9 +20,11 @@ import java.io.InputStreamReader;
 |_|_|_|_|_|_|_|_|_|_|_|_|_|_|
  */
 
-public class T6_Coordinates_point {
+public class T6CoordinatesPoint {
     public static void main(String[] args) throws IOException {
-        double x, y;
+        double x;
+        double y;
+
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         try {
             System.out.print("Введите значение x: ");
@@ -32,8 +34,9 @@ public class T6_Coordinates_point {
         } catch (NumberFormatException e) {
             System.out.println("Введены неверные данные");
             return;
+        } finally {
+            reader.close();
         }
-        reader.close();
 
         System.out.println("Результат принадлежности точки закрашенной области: " + isBelongArea(x, y));
     }

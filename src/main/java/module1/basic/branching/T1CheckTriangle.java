@@ -1,4 +1,4 @@
-package S1_Basic_of_software_code_development.L2_Branching;
+package module1.basic.branching;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -8,9 +8,11 @@ import java.io.InputStreamReader;
 1. Даны два угла треугольника (в градусах). Определить, существует ли такой треугольник, и если да, то будет ли он прямоугольным.
  */
 
-public class T1_Check_triangle {
+public class T1CheckTriangle {
     public static void main(String[] args) throws IOException {
-        int a, b;
+        int a;
+        int b;
+
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         try {
             System.out.print("Введите угол треугольника А°: ");
@@ -20,8 +22,9 @@ public class T1_Check_triangle {
         } catch (NumberFormatException e) {
             System.out.println("Введены неверные данные");
             return;
+        } finally {
+            reader.close();
         }
-        reader.close();
 
         if (isTriangleExists(a, b)) {
             if (isTriangleRectangular(a, b))

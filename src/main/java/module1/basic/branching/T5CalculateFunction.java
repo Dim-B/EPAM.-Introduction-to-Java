@@ -1,4 +1,4 @@
-package S1_Basic_of_software_code_development.L2_Branching;
+package module1.basic.branching;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -9,9 +9,10 @@ import java.io.InputStreamReader;
 F(x)={x^2-3x+9, если x<=3; 1/(x^3+6), если x>3
  */
 
-public class T5_Calculate_function {
+public class T5CalculateFunction {
     public static void main(String[] args) throws IOException {
         double x;
+
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         try {
             System.out.print("Введите x: ");
@@ -19,8 +20,9 @@ public class T5_Calculate_function {
         } catch (NumberFormatException e) {
             System.out.println("Введены неверные данные");
             return;
+        } finally {
+            reader.close();
         }
-        reader.close();
 
         System.out.printf("Значение функции при заданном х составляет: %f", calculateF(x));
     }

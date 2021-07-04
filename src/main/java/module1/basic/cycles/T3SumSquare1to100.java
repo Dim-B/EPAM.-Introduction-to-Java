@@ -1,10 +1,10 @@
-package S1_Basic_of_software_code_development.L3_Cycles;
+package module1.basic.cycles;
 
 /*
 3. Найти сумму квадратов первых ста чисел.
  */
 
-public class T3_Sum_square_1to100 {
+public class T3SumSquare1to100 {
     public static void main(String[] args) {
         System.out.println("Сумма квадратов первых 100 чисел равна: " + getSumSquare1toN(100));
 //        System.out.println("Сумма квадратов первых 100 чисел равна(вычисление по формуле): " + getSumSquare1toNFormula(100));

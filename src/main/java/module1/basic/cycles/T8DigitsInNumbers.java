@@ -1,4 +1,4 @@
-package S1_Basic_of_software_code_development.L3_Cycles;
+package module1.basic.cycles;
 
 /*
 8. Даны два числа. Определить цифры, входящие в запись как первого так и второго числа.
@@ -8,7 +8,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class T8_Digits_in_numbers {
+public class T8DigitsInNumbers {
     public static void main(String[] args) throws IOException {
         int a, b;
 
@@ -21,8 +21,9 @@ public class T8_Digits_in_numbers {
         } catch (NumberFormatException exception) {
             System.out.println("Введены неверные данные");
             return;
+        } finally {
+            reader.close();
         }
-        reader.close();
 
         System.out.printf("Числа %d и %d содержат следующие общие цифры: %s", a, b, getSameDigits(a, b));
     }
@@ -33,8 +34,8 @@ public class T8_Digits_in_numbers {
         int jLastDig;
         for (int i = a; i > 0; i = i / 10) {
             for (int j = b; j > 0; j = j / 10) {
-                 iLastDig = i%10;
-                 jLastDig = j%10;
+                iLastDig = i % 10;
+                jLastDig = j % 10;
                 if (iLastDig == jLastDig && !sameNum.contains(String.valueOf(iLastDig)))
                     sameNum = sameNum.concat(iLastDig + ", ");
             }

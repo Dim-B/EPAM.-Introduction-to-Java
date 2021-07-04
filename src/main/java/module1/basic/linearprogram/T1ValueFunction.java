@@ -1,4 +1,4 @@
-package S1_Basic_of_software_code_development.L1_Linear_programs;
+package module1.basic.linearprogram;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -8,9 +8,12 @@ import java.io.InputStreamReader;
 1. Найдите значение функции: z=((a–3)*b/2)+c.
  */
 
-public class T1_value_function {
+public class T1ValueFunction {
     public static void main(String[] args) throws IOException {
-        double a, b, c;
+        double a;
+        double b;
+        double c;
+
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         try {
             System.out.print("Введите значение a: ");
@@ -22,8 +25,9 @@ public class T1_value_function {
         } catch (NumberFormatException e) {
             System.out.println("Введены неверные данные");
             return;
+        } finally {
+            reader.close();
         }
-        reader.close();
 
         System.out.println("Значение функции z=((a–3)*b/2)+c равно: " + calculateZ(a, b, c));
     }

@@ -1,4 +1,4 @@
-package S1_Basic_of_software_code_development.L3_Cycles;
+package module1.basic.cycles;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -9,9 +9,10 @@ import java.io.InputStreamReader;
 m и n вводятся с клавиатуры.
  */
 
-public class T7_Numbers_divisors {
+public class T7NumbersDivisors {
     public static void main(String[] args) throws IOException {
-        int m, n;
+        int m;
+        int n;
 
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         try {
@@ -26,8 +27,9 @@ public class T7_Numbers_divisors {
         } catch (NumberFormatException exception) {
             System.out.println("Введены неверные данные");
             return;
+        } finally {
+            reader.close();
         }
-        reader.close();
 
         for (int i = m; i <= n; i++) {
             String div = getDivString(i);

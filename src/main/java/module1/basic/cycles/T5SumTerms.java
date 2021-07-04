@@ -1,4 +1,4 @@
-package S1_Basic_of_software_code_development.L3_Cycles;
+package module1.basic.cycles;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -9,7 +9,7 @@ import java.io.InputStreamReader;
 заданному е. Общий член ряда имеет вид: an=1/2^n+1/3^n
  */
 
-public class T5_Sum_terms {
+public class T5SumTerms {
     public static void main(String[] args) throws IOException {
         double e;
 
@@ -24,8 +24,9 @@ public class T5_Sum_terms {
         } catch (NumberFormatException exception) {
             System.out.println("Введены неверные данные");
             return;
+        } finally {
+            reader.close();
         }
-        reader.close();
 
         System.out.print("Сумма членов ряда, удовлетворяющая заданной точности, равна: " + getSumTerms(e));
     }
@@ -33,7 +34,7 @@ public class T5_Sum_terms {
     private static double getSumTerms(double e) {
         double sum = 0;
         double an = 1 / Math.pow(2, 1) + 1 / Math.pow(3, 1);
-        for (int n =2;  an >= e; n++) {
+        for (int n = 2; an >= e; n++) {
             sum += an;
             an = 1 / Math.pow(2, n) + 1 / Math.pow(3, n);
         }

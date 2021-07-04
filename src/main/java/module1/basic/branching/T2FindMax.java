@@ -1,4 +1,4 @@
-package S1_Basic_of_software_code_development.L2_Branching;
+package module1.basic.branching;
 
 /*
 2. Найти max{min(a, b), min(c, d)}.
@@ -8,9 +8,10 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class T2_Find_max {
+public class T2FindMax {
     public static void main(String[] args) throws IOException {
         int a, b, c, d;
+
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         try {
             System.out.print("Введите число a: ");
@@ -24,8 +25,9 @@ public class T2_Find_max {
         } catch (NumberFormatException e) {
             System.out.println("Введены неверные данные");
             return;
+        } finally {
+            reader.close();
         }
-        reader.close();
 
         System.out.printf("Искомое число: %d", Math.max(Math.min(a, b), Math.min(c, d)));
     }

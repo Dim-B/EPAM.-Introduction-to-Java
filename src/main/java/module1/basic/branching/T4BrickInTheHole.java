@@ -1,4 +1,4 @@
-package S1_Basic_of_software_code_development.L2_Branching;
+package module1.basic.branching;
 
 /*
 4. Заданы размеры А, В прямоугольного отверстия и размеры х, у, z кирпича. Определить, пройдет ли кирпич через отверстие.
@@ -8,9 +8,10 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class T4_Brick_in_the_hole {
+public class T4BrickInTheHole {
     public static void main(String[] args) throws IOException {
         double a, b, x, y, z;
+
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         try {
             System.out.print("Введите размер отверстия A: ");
@@ -26,8 +27,9 @@ public class T4_Brick_in_the_hole {
         } catch (NumberFormatException e) {
             System.out.println("Введены неверные данные");
             return;
+        } finally {
+            reader.close();
         }
-        reader.close();
 
         if (isBrickInHole(a, b, x, y, z))
             System.out.println("Кирпич пройдет в отверстие");
